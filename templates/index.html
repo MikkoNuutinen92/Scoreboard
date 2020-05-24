@@ -1,0 +1,44 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Index</title>  
+ <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>  
+<body>
+<!--Post method to add player and score to list-->  
+<form method="POST" class="post-form" action="/emp"> 
+<!--Errors will appear here if there will be any..--> 
+        {% csrf_token %}  
+        {{ form.errors }}
+{{ form.non_field_errors }}
+    <div class="container">  
+<br>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <h3>Player Scoreboard</h3>  
+    </div>
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Player name:</label>  
+    <div class="col-sm-4">  
+      {{ form.Player_name }}  
+    </div>  
+  </div>  
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Score:</label>  
+    <div class="col-sm-4">  
+      {{ form.Score }}  
+    </div>  
+  </div>   
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <button type="submit" class="btn btn-primary">Add</button>  
+    </div>  
+  </div>  
+    </div>  
+</form>  
+</body>  
+</html>  
